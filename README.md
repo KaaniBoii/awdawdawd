@@ -1,1 +1,1 @@
-# JSON2CVS (COVID19-Data via REST-call)
+# JSON2CSV (COVID19-Data via REST-call)
