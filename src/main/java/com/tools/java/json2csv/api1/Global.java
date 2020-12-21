@@ -1,19 +1,10 @@
-package com.tools.java.json2csv;
-
-import java.util.Date;
+package com.tools.java.json2csv.api1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Country {
-
-  @JsonProperty("Country")
-  private String countryName;
-  @JsonProperty("CountryCode")
-  private String countryCode;
-  @JsonProperty("Slug")
-  private String slug;
+public class Global {
   @JsonProperty("NewConfirmed")
   private int newConfirmed;
   @JsonProperty("TotalConfirmed")
@@ -26,36 +17,15 @@ public class Country {
   private int newRecovered;
   @JsonProperty("TotalRecovered")
   private int totalRecovered;
-  @JsonProperty("Date")
-  private Date date;
 
-  public Country() {
-  }
-
-  public Country(String countryName, String countryCode, String slug, int newConfirmed, int totalConfirmed,
-      int newDeaths, int totalDeaths, int newRecovered, int totalRecovered, Date date) {
-    this.countryName = countryName;
-    this.countryCode = countryCode;
-    this.slug = slug;
+  public Global(int newConfirmed, int totalConfirmed, int newDeaths, int totalDeaths, int newRecovered,
+      int totalRecovered) {
     this.newConfirmed = newConfirmed;
     this.totalConfirmed = totalConfirmed;
     this.newDeaths = newDeaths;
     this.totalDeaths = totalDeaths;
     this.newRecovered = newRecovered;
     this.totalRecovered = totalRecovered;
-    this.date = date;
-  }
-
-  public String getCountryName() {
-    return countryName;
-  }
-
-  public String getCountryCode() {
-    return countryCode;
-  }
-
-  public String getSlug() {
-    return slug;
   }
 
   public int getNewConfirmed() {
@@ -63,7 +33,7 @@ public class Country {
   }
 
   public int getTotalConfirmed() {
-    return totalConfirmed;
+    return this.totalConfirmed;
   }
 
   public int getNewDeaths() {
@@ -82,28 +52,11 @@ public class Country {
     return totalRecovered;
   }
 
-  public Date getDate() {
-    return date;
-  }
-
   @Override
   public String toString() {
-    return "Country [countryCode=" + countryCode + ", countryName=" + countryName + ", date=" + date + ", newConfirmed="
-        + newConfirmed + ", newDeaths=" + newDeaths + ", newRecovered=" + newRecovered + ", slug=" + slug
-        + ", totalConfirmed=" + totalConfirmed + ", totalDeaths=" + totalDeaths + ", totalRecovered=" + totalRecovered
+    return "Global [TotalConfirmed=" + totalConfirmed + ", newConfirmed=" + newConfirmed + ", newDeaths=" + newDeaths
+        + ", newRecovered=" + newRecovered + ", totalDeaths=" + totalDeaths + ", totalRecovered=" + totalRecovered
         + "]";
-  }
-
-  public void setCountryName(String countryName) {
-    this.countryName = countryName;
-  }
-
-  public void setCountryCode(String countryCode) {
-    this.countryCode = countryCode;
-  }
-
-  public void setSlug(String slug) {
-    this.slug = slug;
   }
 
   public void setNewConfirmed(int newConfirmed) {
@@ -128,10 +81,6 @@ public class Country {
 
   public void setTotalRecovered(int totalRecovered) {
     this.totalRecovered = totalRecovered;
-  }
-
-  public void setDate(Date date) {
-    this.date = date;
   }
 
 }
