@@ -39,14 +39,12 @@ public class ConsumingRestApplication {
       try {
         CovidData data = restTemplate.getForObject("https://api.covid19api.com/summary", CovidData.class);
         this.writeFile(data.getCountries());
-        // log.info(data.toString());
       } catch (Exception e) {
         System.err.println(
             "GET auf API #1 (https://api.covid19api.com/summary) hat leider nicht geklappt. Weiter mit API #2 (https://covid19-api.org/api/status)...");
         CovidData2 data = new CovidData2();
         data.setCountries(restTemplate.getForObject("https://covid19-api.org/api/status", Country2[].class));
         this.writeFile(data.getCountries());
-        // log.info(data.toString());
       } finally {
         log.info("COVID19 Daten erfolgreich erstellt!");
       }
@@ -68,9 +66,9 @@ public class ConsumingRestApplication {
           fw.write(((Country) countries[i]).getNewConfirmed() + ",");
           fw.write(((Country) countries[i]).getTotalConfirmed() + ",");
           fw.write(((Country) countries[i]).getNewDeaths() + ",");
-          fw.write(((Country) countries[i]).getTotalDeaths() + "\",");
-          fw.write(((Country) countries[i]).getNewRecovered() + "\",");
-          fw.write(((Country) countries[i]).getTotalRecovered() + "\",");
+          fw.write(((Country) countries[i]).getTotalDeaths() + ",");
+          fw.write(((Country) countries[i]).getNewRecovered() + ",");
+          fw.write(((Country) countries[i]).getTotalRecovered() + ",");
           fw.write("\"" + ((Country) countries[i]).getDate() + "\"" + System.lineSeparator());
           i++;
         }

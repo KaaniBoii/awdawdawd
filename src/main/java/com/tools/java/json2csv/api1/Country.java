@@ -92,7 +92,11 @@ public class Country {
   }
 
   public void setCountryName(String countryName) {
-    this.countryName = countryName;
+    if (countryName.contains(",")) {
+      this.countryName = countryName.replace(",", ";");
+    } else {
+      this.countryName = countryName;
+    }
   }
 
   public void setCountryCode(String countryCode) {
@@ -100,7 +104,11 @@ public class Country {
   }
 
   public void setSlug(String slug) {
-    this.slug = slug;
+    if (slug.contains(",")) {
+      this.slug = slug.replace(",", ";");
+    } else {
+      this.slug = slug;
+    }
   }
 
   public void setNewConfirmed(int newConfirmed) {
