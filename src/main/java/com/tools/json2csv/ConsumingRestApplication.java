@@ -1,12 +1,12 @@
-package com.tools.java.json2csv;
+package com.tools.json2csv;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.tools.java.json2csv.api1.Country;
-import com.tools.java.json2csv.api1.CovidData;
-import com.tools.java.json2csv.api2.Country2;
-import com.tools.java.json2csv.api2.CovidData2;
+import com.tools.json2csv.api1.Country;
+import com.tools.json2csv.api1.CovidData;
+import com.tools.json2csv.api2.Country2;
+import com.tools.json2csv.api2.CovidData2;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

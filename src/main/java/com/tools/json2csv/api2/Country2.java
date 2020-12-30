@@ -1,4 +1,4 @@
-package com.tools.java.json2csv.api2;
+package com.tools.json2csv.api2;
 
 import java.util.Date;
 

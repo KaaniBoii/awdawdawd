@@ -1,4 +1,4 @@
-package com.tools.java.json2csv.api1;
+package com.tools.json2csv.api1;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
